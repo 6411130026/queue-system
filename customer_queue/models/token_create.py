@@ -3,6 +3,7 @@ from odoo import fields, api, models, _
 
 class TokenCreate(models.Model):
     _name = 'token.token'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Queue ID", required=True, copy=False, randomly=True, index=True,
                        default=lambda self: _('New'))
@@ -19,9 +20,15 @@ class TokenCreate(models.Model):
                               ('consultation', 'Consultation'),
                               ('waiting_payment', 'Waiting for Payment'),
                               ('paying', 'Payment in progress'),
-                              ('skipped', 'Skipped'),
                               ('cancel', 'Cancel'),
                               ('done', 'Done')], string="State", default='register', tracking=True)
+
+    @api.depends('state')
+    def _compute_current_queue(self):
+        """ คำนวณคิวปัจจุบันที่กำลังเรียก """
+        self.current_queue = self.search([('state', '=', 'consultation')], limit=1).name or 'None'
+
+    current_queue = fields.Char(string="Current Queue", compute="_compute_current_queue")
 
     @api.model
     def create(self, vals):
@@ -42,6 +49,7 @@ class TokenCreate(models.Model):
         if vals.get('state') == 'Done':  # ตรวจสอบว่า state เป็น 'done'
             vals['service_done'] = True  # ถ้า state เป็น 'done' ให้ตั้งค่า service_done เป็น True
         return vals  # ส่งค่ากลับไป
+
 
     def queue_confirm(self):
         for record in self:
@@ -103,3 +111,4 @@ class TokenCreate(models.Model):
             ('cancel', 'Cancel'),
             ('done', 'Done'),
         ], string="State Mapping", help="This state will be applied to tokens in this department.")
+

@@ -19,7 +19,7 @@
                             </div>
                             <div class="oe_kanban_buttons">
                                 <!-- ปุ่มที่คุณต้องการเพิ่มใน Kanban Card -->
-                                 <button name="action_open_wizard" type="object" string="Call Queue" class="btn-primary"/>
+                                 <button name="action_open_wizard" type="object" string="Open counter" class="btn-primary"/>
                             </div>
                         </div>
                     </t>
@@ -35,7 +35,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_open_wizard" type="object" string="Call Queue" class="btn-primary"/>
+                    <button name="state" widget="statusbar"/>
                 </header>
                 <sheet>
                     <group style="text-align:center" string="Create Counter"/>
