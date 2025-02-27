@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Root Menu -->
-    <menuitem id="queue_root_menu" name="Queue System" sequence="1"/>
+    <menuitem id="queue_root_menu" name="Queue" sequence="1"/>
 
     <!-- All Queue -->
     <menuitem id="token_create_menu" name="All Queue" parent="queue_root_menu"
               action="action_customer_token" sequence="2"/>
 
     <!-- Department -->
-    <menuitem id="department_menu" name="Department" parent="queue_root_menu"
-              action="action_counter_create_triage" sequence="3"/>
+    <menuitem id="department_menu" name="Department" parent="queue_root_menu" action="action_counter_create_triage"
+              sequence="4"/>
 
     <!-- Customer Service -->
     <menuitem id="customer_service_menu" name="Customer Service" parent="queue_root_menu"
-              action="action_customer_service_view" sequence="4"/>
+              action="action_customer_service_view" sequence="5"/>
 
-
-
-    <!-- Define Action for Waiting Screen -->
-    <record id="action_waiting_screen_view" model="ir.actions.act_window">
-        <field name="name">Waiting Screen</field>
-        <field name="res_model">token.token</field>
-        <field name="view_mode">tree,form</field>
-        <field name="domain">[('state', 'not in', ['done', 'cancel'])]</field>
-    </record>
+    <!-- Token Display (Commented) -->
+    <!--
+    <menuitem id="token_screen_menu" name="Token Display" parent="queue_root_menu"
+              action="action_token_screen_show" sequence="6"/>
+    -->
 </odoo>

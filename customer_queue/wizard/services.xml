@@ -46,8 +46,7 @@
                 </sheet>
                 <footer>
                     <button name="customer_service" type="object" string="Next" class="btn-primary" data-hotkey="q"/>
-                    <button name="action_skip" type="object" special="cancel" data-hotkey="z" string="Cancel"
-                            class="btn-secondary"/>
+                    <button name="action_skip" type="object" string="Skip Queue" class="btn-secondary"/>
                 </footer>
             </form>
         </field>

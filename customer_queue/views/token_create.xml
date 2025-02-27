@@ -10,7 +10,6 @@
                 <field name="customer_name"/>
                 <field name="department"/>
                 <field name="state" widget="badge"/>
-                <field name="service_done"/>
                 <field name="service_comment"/>
             </tree>
         </field>
@@ -54,7 +53,6 @@
                             <field name="customer_name"/>
                             <field name="name"/>
                             <field name="department"/>
-                            <field name="service_done" invisible="1"/>
                             <field name="service_comment"/>
                         </group>
                     </group>
