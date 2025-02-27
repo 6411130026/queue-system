@@ -32,6 +32,7 @@ class CounterCreate(models.Model):
             },
         }
 
+
 class CustomerService(models.TransientModel):
     _name = 'customer.service'
 

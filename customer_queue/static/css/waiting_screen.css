@@ -1,0 +1,31 @@
+.waiting-screen-card {
+    width: 100%;
+    height: 100vh; /* ✅ เต็มจอ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem; /* ✅ ขยายตัวหนังสือ */
+    color: white;
+    background-color: #007bff; /* ✅ พื้นหลังสีฟ้า */
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.queue-number {
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.customer-name {
+    font-size: 4rem;
+}
+
+.counter-name {
+    font-size: 3rem;
+    background: yellow;
+    padding: 10px;
+    border-radius: 5px;
+}
