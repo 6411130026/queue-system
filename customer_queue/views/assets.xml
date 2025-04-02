@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <data inherit_id="web.assets_backend">
-        <xpath expr="." position="inside">
-            <script type="text/javascript" src="/customer_queue/static/src/js/waiting_screen.js"/>
-        </xpath>
-    </data>
-</odoo>
